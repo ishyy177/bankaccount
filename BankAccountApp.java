@@ -29,7 +29,7 @@ class bankAccount implements interestrate {
     private static int ID = 1000; // internal id
     private String accountName;
     private String accountNumber; // id + random 2 numbers + first 2 of the sort code number
-    // private String sortCode;
+    private static int sortCode = 500001;
     private String ssn;
     // private static final String routingNumber = "005400057";
     // private String reference;
@@ -43,6 +43,7 @@ class bankAccount implements interestrate {
         balance = deposit;
         ID++;
         setaccountNumber();
+        setsortCode();
         // setBalance();
     }
 
@@ -50,6 +51,11 @@ class bankAccount implements interestrate {
         int random = (int) (Math.random() * 100);
         accountNumber = ID + "" + random + ssn.substring(0, 2);
         System.out.println("your account number is: " + accountNumber);
+    }
+
+    private void setsortCode() {
+        sortCode++;
+        System.out.println("your sortcode is " + sortCode);
     }
 
     public void setName(String accountName) {
